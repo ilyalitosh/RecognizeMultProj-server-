@@ -2,18 +2,12 @@ import iztypes.IZBinarizationModes;
 import iztypes.IZFilterMaskSize;
 import iztypes.IZFilterModes;
 import iztypes.IZMorphologyModes;
-import javafx.application.Application;
-import org.opencv.core.*;
-import org.opencv.imgcodecs.Imgcodecs;
-import org.opencv.imgproc.Imgproc;
 
-import javax.imageio.ImageIO;
+
 import java.awt.*;
 import java.awt.image.*;
 import java.io.*;
 import java.net.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -36,7 +30,6 @@ public class StartServer {
     private static NeuralNetwork nn = new NeuralNetwork();
 
     public static void main(String[] args) {
-        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
         System.loadLibrary(ImageZ.LIBRARY_NAME);
         Scanner scanInput = new Scanner(System.in);
         System.out.println("Введите ip-адрес");
@@ -250,36 +243,6 @@ public class StartServer {
         g.drawImage(bImagePreClipped, 0, 0, null);
 
         return bImageClipped;
-    }
-
-    private static boolean isNeededImage(/*BufferedImage bImage,*/ Rect rect, List<MatOfPoint> counters){
-        /*int blackCount = 0, whiteCount = 0;
-        Color colorCurrentPixel;
-        for(int i = 0; i < bImage.getHeight(); i++){
-            for(int j = 0; j < bImage.getWidth(); j++){
-                colorCurrentPixel = new Color(bImage.getRGB(j, i));
-                if(colorCurrentPixel.getRed() == 0){
-                    blackCount++;
-                }else{
-                    whiteCount++;
-                }
-            }
-        }
-        //System.out.println(whiteCount + " --- " + blackCount + " --- " + ((blackCount + 0.0)/whiteCount));
-        if(((blackCount + 0.0)/whiteCount) < 1.4){
-            return true;
-        }else{
-            return false;
-        }*/
-        Rect currentRect;
-        for(int i = 0; i < counters.size(); i++){
-            currentRect = Imgproc.boundingRect(counters.get(i));
-            if((rect.x > currentRect.x) && (rect.x + rect.width < currentRect.x + currentRect.width)){
-                return false;
-            }
-        }
-
-        return true;
     }
 
 }

@@ -1,0 +1,127 @@
+//Mat mat = Imgcodecs.imread("src/testFrames/12/" + i + ".png", 0);
+                                    /*MatOfByte mob = new MatOfByte();
+                                    Imgcodecs.imencode(".png", mat, mob);*/
+                                    //BufferedImage inputBImage = ImageIO.read(new ByteArrayInputStream(byteData));
+                                    //BufferedImage bImage1 = new BufferedImage(900, 250, BufferedImage.TYPE_BYTE_GRAY);
+                                    //decodingFrame(bImage1);
+                                    //Graphics gInputBimage = bImage1.getGraphics();
+                                    //gInputBimage.drawImage(inputBImage, 0, 0, null);
+                                    Mat mat = Mat.ones(new Size(900, 300), CvType.CV_8UC1);
+                                    decodingFrameToMat(mat);
+                                    //mat.put(0, 0, byteData/*((DataBufferByte)bImage1.getRaster().getDataBuffer()).getData()*/);
+                                    Mat newMatAfterThreshold = new Mat();
+                                    Imgproc.adaptiveThreshold(mat, newMatAfterThreshold, 255, Imgproc.ADAPTIVE_THRESH_MEAN_C, Imgproc.THRESH_BINARY_INV, 51, 5);
+                                    Mat newmatAfterBlur = new Mat();
+                                    Imgproc.medianBlur(newMatAfterThreshold, newmatAfterBlur, 13);
+                                    //Mat newMatAfterMorph1 = new Mat();
+                                    //Imgproc.morphologyEx(newmatAfterBlur, newMatAfterMorph1, Imgproc.MORPH_ERODE, Mat.ones(new Size(10,12), CvType.CV_8UC1));
+                                    Mat newMatAfterMorph = new Mat();
+                                    //Imgproc.morphologyEx(newmatAfterBlur, newMatAfterMorph, Imgproc.MORPH_DILATE, Mat.ones(new Size(9,18), CvType.CV_8UC1));
+                                    Imgproc.dilate(newmatAfterBlur, newMatAfterMorph, Mat.ones(new Size(10,21), CvType.CV_8UC1));
+                                    Mat newMatAfterMorph1 = new Mat();
+                                    //Imgproc.morphologyEx(newMatAfterMorph, newMatAfterMorph1, Imgproc.MORPH_ERODE, Mat.ones(new Size(2,3), CvType.CV_8UC1));
+                                    MatOfByte mob = new MatOfByte();
+                                    Imgcodecs.imencode(".png", newMatAfterMorph, mob);
+                                    try {
+                                        BufferedImage newbImage = ImageIO.read(new ByteArrayInputStream(mob.toArray()));
+                                        //BufferedImage finalbImage = newbImage.getSubimage(0, 25, newbImage.getWidth(), newbImage.getHeight() - 50);
+                                        //BufferedImage samiyFinalbImge = new BufferedImage(finalbImage.getWidth(), finalbImage.getHeight(), BufferedImage.TYPE_BYTE_GRAY);
+                                        //Graphics g = samiyFinalbImge.getGraphics();
+                                        //g.drawImage(finalbImage, 0, 0, null);
+                                        //byte[] pixels = ((DataBufferByte)newbImage.getRaster().getDataBuffer()).getData();
+                                        BufferedImage finalBImage = clipFrame(newbImage, (short)70);
+                                        byte[] pixels = ((DataBufferByte)finalBImage.getRaster().getDataBuffer()).getData();
+                                        Mat bImageToMat = Mat.ones(new Size(finalBImage.getWidth(), finalBImage.getHeight()), CvType.CV_8UC1);
+                                        /*byte[] pixels = ((DataBufferByte)samiyFinalbImge.getRaster().getDataBuffer()).getData();
+                                        Mat bImageToMat = Mat.ones(new Size(samiyFinalbImge.getWidth(), samiyFinalbImge.getHeight()), CvType.CV_8UC1);*/
+                                        bImageToMat.put(0, 0, pixels);
+
+                                        List<MatOfPoint> counters = new ArrayList<>();
+                                        Mat hierarchy = new Mat();
+                                        Imgproc.findContours(bImageToMat, counters, hierarchy, Imgproc.RETR_TREE, Imgproc.CHAIN_APPROX_SIMPLE);
+                                        for(int i = 0; i < counters.size(); i++){
+                                            if(Imgproc.contourArea(counters.get(i)) < 7000){
+                                                Rect rect = Imgproc.boundingRect(counters.get(i));
+                                                for(int i1 = rect.y; i1 < rect.y + rect.height; i1++){
+                                                    for(int i2 = rect.x; i2 < rect.x + rect.width; i2++){
+                                                        bImageToMat.put(i1, i2, 0.0);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        MatOfByte mod1 = new MatOfByte();
+                                        Imgcodecs.imencode(".png", bImageToMat, mod1);
+                                        BufferedImage fBImage = ImageIO.read(new ByteArrayInputStream(mod1.toArray()));
+                                        Graphics gFBImage = fBImage.getGraphics();
+                                        gFBImage.setColor(new Color(255, 0, 0));
+                                        gFBImage.setFont(new Font("Arial", Font.BOLD, 14));
+
+                                        ArrayList<BufferedImage> images = new ArrayList<>();
+                                        ArrayList<Integer> filteredImagesNumbers = new ArrayList<>();
+                                        for(int i = 0; i < counters.size(); i++){
+                                            if(Imgproc.contourArea(counters.get(i)) > 7000){
+                                                Rect rect = Imgproc.boundingRect(counters.get(i));
+                                                if(isNeededImage(rect, counters)){
+                                                    System.out.println("111");
+                                                    filteredImagesNumbers.add(i);
+                                                }
+                                            }
+                                        }
+                                        for(int i = filteredImagesNumbers.size() - 1; i > 0; i--){
+                                            for(int j = 0; j < i; j++){
+                                                Rect rect = Imgproc.boundingRect(counters.get(filteredImagesNumbers.get(j)));
+                                                Rect rect1 = Imgproc.boundingRect(counters.get(filteredImagesNumbers.get(j + 1)));
+                                                if(rect.x > rect1.x){
+                                                    int buffer = filteredImagesNumbers.get(j);
+                                                    filteredImagesNumbers.set(j, filteredImagesNumbers.get(j + 1));
+                                                    filteredImagesNumbers.set(j + 1, buffer);
+                                                }
+                                            }
+                                        }
+                                        String response = "";
+                                        for(int i = 0; i < filteredImagesNumbers.size(); i++){
+                                            //if(Imgproc.contourArea(counters.get(i)) > 7000){
+                                                Rect rect = Imgproc.boundingRect(counters.get(filteredImagesNumbers.get(i)));
+                                                BufferedImage imageForRecognize = new BufferedImage(rect.width, rect.height, BufferedImage.TYPE_BYTE_GRAY);
+                                                Graphics gImageForRecognize = imageForRecognize.getGraphics();
+                                                gImageForRecognize.drawImage(fBImage.getSubimage(rect.x, rect.y, rect.width, rect.height), 0, 0, null);
+                                                for(int j = 0; j < imageForRecognize.getHeight(); j++){
+                                                    for(int k = 0; k < imageForRecognize.getWidth(); k++){
+                                                        Color color = new Color(imageForRecognize.getRGB(k, j));
+                                                        if(color.getRed() == 255){
+                                                            gImageForRecognize.setColor(new Color(0, 0, 0));
+                                                            gImageForRecognize.drawLine(k, j, k, j);
+                                                        }else{
+                                                            gImageForRecognize.setColor(new Color(255, 255, 255));
+                                                            gImageForRecognize.drawLine(k, j, k, j);
+                                                        }
+                                                    }
+                                                }
+                                                nn.enterInputData(imageForRecognize);
+                                                nn.computeOutputDataNeuralNetwork();
+                                                gFBImage.drawString(nn.neuralNetworkResponse(), rect.x + rect.width - 30, rect.y + rect.height - 30);
+                                                response += nn.neuralNetworkResponse();
+                                                //images.add(imageForRecognize);
+                                            //}
+                                        }
+                                        System.out.println("[Server]: Вижу " + response);
+                                        dataOut.writeUTF(response);
+                                        /*for(int i = 0; i < images.size(); i++){
+                                            ImageIO.write(images.get(i), "PNG", new File("src/frames/result/" + i + ".png"));
+                                        }*/
+
+                                        cp.getGCameraPreview().drawImage(fBImage, 10, 30, null);
+                                        //ImageIO.write(bImage1, "PNG", new File("src/frames/frame" + counter + ".png"));
+                                        ImageIO.write(fBImage, "PNG", new File("src/frames/result/" + counter + "11.png"));
+
+
+                /*Mat m = Mat.ones(new Size(samiyFinalbImge.getWidth(), samiyFinalbImge.getHeight()), CvType.CV_8UC1);
+                Imgproc.drawContours(m, counters, -1, Scalar.all(255));
+                MatOfByte mod2 = new MatOfByte();
+                Imgcodecs.imencode(".png", m, mod2);
+                BufferedImage fBImage1 = ImageIO.read(new ByteArrayInputStream(mod2.toArray()));
+                ImageIO.write(fBImage1, "PNG", new File("src/testFrames/result/counters/" + i + ".png"));*/
+
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }

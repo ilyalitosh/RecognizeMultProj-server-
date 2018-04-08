@@ -1,0 +1,1 @@
+java -Djava.library.path=include/x64/ -jar CamServer.jar

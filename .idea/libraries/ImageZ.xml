@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ImageZ">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/include/ImageZ.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

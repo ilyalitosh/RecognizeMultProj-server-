@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CamServer:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CamServer_jar</output-path>
+    <root id="archive" name="CamServer.jar">
+      <element id="module-output" name="CamServer" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/include/ImageZ.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/include/opencv-331.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

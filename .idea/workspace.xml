@@ -7,12 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="877ad90a-9d40-4a13-934b-3f0c5eb7f2e5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/opencv_331.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/include/x64/opencv_java331.dll" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/opencv-331.jar" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CamServer.iml" afterPath="$PROJECT_DIR$/CamServer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/StartServer.java" afterPath="$PROJECT_DIR$/src/StartServer.java" />
     </list>
     <ignored path="CamServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -466,6 +462,14 @@
       <option name="presentableId" value="Default" />
       <updated>1509545517615</updated>
     </task>
+    <task id="LOCAL-00001" summary="123">
+      <created>1523211489338</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1523211489338</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -521,7 +525,8 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="123" />
+    <option name="LAST_COMMIT_MESSAGE" value="123" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

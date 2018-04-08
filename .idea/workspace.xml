@@ -7,8 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="877ad90a-9d40-4a13-934b-3f0c5eb7f2e5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/include/opencv-331.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CamServer/CamPreview.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CamServer/NeuralNetwork.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CamServer/StartServer$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CamServer/StartServer.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NeuralNetwork.java" afterPath="$PROJECT_DIR$/src/NeuralNetwork.java" />
     </list>
     <ignored path="CamServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,10 +35,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StartServer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StartServer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/StartServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1596">
+            <state relative-caret-position="525">
               <caret line="245" column="5" lean-forward="false" selection-start-line="245" selection-start-column="5" selection-end-line="245" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -44,14 +48,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NeuralNetwork.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NeuralNetwork.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/NeuralNetwork.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2380">
-              <caret line="162" column="12" lean-forward="false" selection-start-line="162" selection-start-column="12" selection-end-line="162" selection-end-column="12" />
+            <state relative-caret-position="119">
+              <caret line="12" column="76" lean-forward="false" selection-start-line="12" selection-start-column="76" selection-end-line="12" selection-end-column="76" />
               <folding>
-                <element signature="method#showOutput#0;class#NeuralNetwork#0" expanded="false" />
-                <element signature="method#updateMemory#0;class#NeuralNetwork#0" expanded="false" />
                 <element signature="method#loadObjectData#0;class#NeuralNetwork#0" expanded="false" />
               </folding>
             </state>
@@ -106,9 +108,9 @@
         <option value="$PROJECT_DIR$/src/CamPreiew.java" />
         <option value="$PROJECT_DIR$/include/ImageZ.jar!/ImageZ.class" />
         <option value="$PROJECT_DIR$/include/ImageZ.jar!/ImageSegmentations.class" />
-        <option value="$PROJECT_DIR$/src/NeuralNetwork.java" />
         <option value="$PROJECT_DIR$/src/CamPreview.java" />
         <option value="$PROJECT_DIR$/src/StartServer.java" />
+        <option value="$PROJECT_DIR$/src/NeuralNetwork.java" />
       </list>
     </option>
   </component>
@@ -139,8 +141,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -469,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1523211489338</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="123">
+      <created>1523211562500</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1523211562500</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -483,6 +492,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -491,18 +501,18 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32837838" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295129" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30405405" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16475645" sideWeight="0.48979592" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16690545" sideWeight="0.48979592" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973986" sideWeight="0.4679487" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1862643" sideWeight="0.5102041" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1862643" sideWeight="0.5102041" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -744,28 +754,10 @@
     </entry>
     <entry file="jar://$PROJECT_DIR$/include/ImageZ.jar!/ImageSegmentations.class" />
     <entry file="file://$PROJECT_DIR$/src/CamPreiew.java" />
-    <entry file="jar://$PROJECT_DIR$/include/opencv-331.jar!/org/opencv/core/Mat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="914" column="25" lean-forward="false" selection-start-line="914" selection-start-column="20" selection-end-line="914" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/include/opencv-331.jar!/org/opencv/imgcodecs/Imgcodecs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/include/opencv-331.jar!/org/opencv/core/Mat.java" />
+    <entry file="jar://$PROJECT_DIR$/include/opencv-331.jar!/org/opencv/imgcodecs/Imgcodecs.java" />
     <entry file="file://$PROJECT_DIR$/src/Ass.java" />
-    <entry file="jar://$PROJECT_DIR$/include/opencv-331.jar!/org/opencv/imgproc/Imgproc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="3298" column="31" lean-forward="false" selection-start-line="3298" selection-start-column="31" selection-end-line="3298" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/include/opencv-331.jar!/org/opencv/imgproc/Imgproc.java" />
     <entry file="jar://D:/Program Files/Java/jdk1.8.0_91/jre/lib/rt.jar!/java/awt/image/SampleModel.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -817,23 +809,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/StartServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1596">
+        <state relative-caret-position="525">
           <caret line="245" column="5" lean-forward="false" selection-start-line="245" selection-start-column="5" selection-end-line="245" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#clipFrame#0;class#StartServer#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NeuralNetwork.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2380">
-          <caret line="162" column="12" lean-forward="false" selection-start-line="162" selection-start-column="12" selection-end-line="162" selection-end-column="12" />
-          <folding>
-            <element signature="method#showOutput#0;class#NeuralNetwork#0" expanded="false" />
-            <element signature="method#updateMemory#0;class#NeuralNetwork#0" expanded="false" />
-            <element signature="method#loadObjectData#0;class#NeuralNetwork#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -848,6 +828,16 @@
             <element signature="e#253#254#0" expanded="true" />
             <element signature="e#500#501#0" expanded="true" />
             <element signature="e#540#541#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NeuralNetwork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="76" lean-forward="false" selection-start-line="12" selection-start-column="76" selection-end-line="12" selection-end-column="76" />
+          <folding>
+            <element signature="method#loadObjectData#0;class#NeuralNetwork#0" expanded="false" />
           </folding>
         </state>
       </provider>
